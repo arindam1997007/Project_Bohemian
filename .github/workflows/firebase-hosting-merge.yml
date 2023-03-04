@@ -7,6 +7,7 @@ name: Deploy to Firebase Hosting on merge
     branches:
       - master
 env:
+  CI: false
   REACT_APP_FIREBASE_API_KEY: ${{ secrets.REACT_APP_FIREBASE_API_KEY }}
   REACT_APP_STRIPE_API_KEY: ${{ secrets.REACT_APP_STRIPE_API_KEY }}
   REACT_APP_STAGING_BASE_URL: ${{ secrets.REACT_APP_STAGING_BASE_URL }}
