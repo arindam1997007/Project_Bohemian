@@ -1,0 +1,15 @@
+.menu_item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu_item label {
+    cursor: pointer;
+}
+
+.circle_color {
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    margin: "5px";
+}

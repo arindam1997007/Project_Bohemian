@@ -1,0 +1,9 @@
+export const FILTER_REDUCER_CONST = {
+  CHANGE_FILTER: "CHANGE_FILTER",
+  CLEAR_FILTER: "CLEAR_FILTER",
+  CLEAR_ALL_FILTER: "CLEAR_ALL_FILTER",
+  GENDER: "gender",
+  CATEGORY: "category",
+  COLOR: "color",
+  SIZE: "size",
+};

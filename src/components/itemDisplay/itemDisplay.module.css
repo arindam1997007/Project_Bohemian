@@ -1,0 +1,30 @@
+.inner_carousel{
+    display: grid;
+    grid-auto-flow: column;
+}
+
+.item {
+    height: 25em;
+    width:20em;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.carousel {
+    overflow: scroll;
+    cursor:grab;
+}
+
+@media (min-width:var(--chakra-breakpoints-md)){
+    .item {
+        height: 40em;
+        width:30em;
+    }
+}
