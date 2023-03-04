@@ -2,10 +2,15 @@
 # https://github.com/firebase/firebase-tools
 
 name: Deploy to Firebase Hosting on merge
-'on':
+"on":
   push:
     branches:
       - master
+env:
+  REACT_APP_FIREBASE_API_KEY: ${{ secrets.REACT_APP_FIREBASE_API_KEY }}
+  REACT_APP_STRIPE_API_KEY: ${{ secrets.REACT_APP_STRIPE_API_KEY }}
+  REACT_APP_STAGING_BASE_URL: ${{ secrets.REACT_APP_STAGING_BASE_URL }}
+  REACT_APP_ADMIN_EMAIL: ${{ secrets.REACT_APP_ADMIN_EMAIL }}
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
@@ -13,13 +18,8 @@ jobs:
       - uses: actions/checkout@v2
       - run: npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
-      env:
-          REACT_APP_FIREBASE_API_KEY: ${{ secrets.REACT_APP_FIREBASE_API_KEY }}
-          REACT_APP_STRIPE_API_KEY: ${{ secrets.REACT_APP_STRIPE_API_KEY }}
-          REACT_APP_STAGING_BASE_URL: ${{ secrets.REACT_APP_STAGING_BASE_URL }}
-          REACT_APP_ADMIN_EMAIL: ${{ secrets.REACT_APP_ADMIN_EMAIL }}
         with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_INFATUATION_C13EC }}'
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_INFATUATION_C13EC }}"
           channelId: live
           projectId: infatuation-c13ec
