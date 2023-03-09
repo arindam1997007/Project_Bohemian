@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# This is an ECommerce Project, where you can check items and buy them.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
